@@ -1,0 +1,23 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+  "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+  "quantization": "Q4_K_M",
+  "runtime": "llama.cpp b12020 Windows x64 CPU",
+  "assets": [
+    {
+      "name": "llama-b12020-bin-win-cpu-x64.zip",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12020/llama-b12020-bin-win-cpu-x64.zip",
+      "sha256": "07e81782f5a16c7ffef42403183808e02f271c9ece3aa2d64040b2620ae8d519",
+      "bytes": 24574627
+    },
+    {
+      "name": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+      "bytes": 1117320736
+    }
+  ],
+  "device": "CPU",
+  "threads": 6,
+  "context_tokens": 4096
+}

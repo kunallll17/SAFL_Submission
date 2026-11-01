@@ -1,0 +1,14 @@
+[project]
+name = "vaaniverify"
+version = "0.1.0"
+description = "Intent-bound multilingual consent for untrusted DPI agents"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "cryptography>=44", "httpx>=0.27,<1"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

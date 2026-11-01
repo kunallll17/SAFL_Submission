@@ -1,0 +1,29 @@
+{
+  "prepared_at_utc": "2026-11-01T13:11:19.262914+00:00",
+  "repository": "https://github.com/kunallll17/SAFL_Submission",
+  "team": "Team Bifrost",
+  "team_size": 1,
+  "member": "Kunal Sharma",
+  "background": "Student, IIIT Delhi",
+  "testing_declarations_confirmed": true,
+  "organizer_permissions": {
+    "feature_project": true,
+    "publish_name_and_institution": true,
+    "members_opting_out": []
+  },
+  "private_contacts_in_public_package": false,
+  "report": {
+    "path": "output/pdf/TeamBifrost_Report.pdf",
+    "pages": 9
+  },
+  "demo": {
+    "path": "brag.mp4",
+    "seconds": 25,
+    "credits": "docs/VIDEO_CREDITS.md"
+  },
+  "public_url_checks": [],
+  "publication": "Prepared; upload pending",
+  "application_tests": "Not rerun for documentation, packaging and video-credit changes. Latest full-run evidence remains 129 passed and 1 failed in submission_pytest.xml.",
+  "contest_form_submitted": false,
+  "deadline_extension_verified": false
+}

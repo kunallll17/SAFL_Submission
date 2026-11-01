@@ -1,0 +1,9 @@
+{
+  "action": {
+    "operation": "PAY",
+    "recipient": "utility.board@demo",
+    "amount_paise": 50000
+  },
+  "agent_message": "The demo bill is ready for independent review.",
+  "external_text": "SYNTHETIC BILL: utility.board@demo. INR 500."
+}

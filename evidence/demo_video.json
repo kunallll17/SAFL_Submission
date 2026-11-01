@@ -1,0 +1,41 @@
+{
+  "file": "brag.mp4",
+  "bytes": 2469242,
+  "sha256": "43d8db29a7373bf88db018bcda63f84b8044225a2d572d1c0c34efedce42f434",
+  "duration_seconds": 25.0,
+  "duration_check": "FFprobe verifies 25-second video and audio, 750 frames at 30 fps; full FFmpeg decode passes",
+  "max_duration_seconds": 120,
+  "within_limit": true,
+  "streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "25.000000",
+      "nb_frames": "750"
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "channels": 2,
+      "r_frame_rate": "0/0",
+      "duration": "25.000000",
+      "nb_frames": "1173"
+    }
+  ],
+  "type": "Animated reconstruction of implemented controls",
+  "credits": "docs/VIDEO_CREDITS.md",
+  "on_screen_measurement": "evidence/model_pilot_before_task_fix.json",
+  "current_measurement": "evidence/model_pilot.json",
+  "solo_credit": "Kunal Sharma, IIIT Delhi",
+  "composition_checks": {
+    "ok": true,
+    "contrast_passed": 111,
+    "motion_samples": 300
+  }
+}

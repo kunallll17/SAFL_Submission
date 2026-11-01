@@ -1,0 +1,170 @@
+[
+  {
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "anyio",
+    "version": "4.15.1",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "certifi",
+    "version": "2026.10.23",
+    "license": "MPL-2.0",
+    "homepage": "https://github.com/certifi/python-certifi"
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "license": "MIT-0",
+    "homepage": ""
+  },
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "license": "See upstream licence files",
+    "homepage": ""
+  },
+  {
+    "name": "cryptography",
+    "version": "50.0.2",
+    "license": "Apache-2.0 OR BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "fastapi",
+    "version": "0.162.0",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "license": "MIT",
+    "homepage": "https://github.com/python-hyper/h11"
+  },
+  {
+    "name": "httpcore",
+    "version": "1.0.9",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "httpx",
+    "version": "0.28.1",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.1",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "opentelemetry-api",
+    "version": "1.45.2",
+    "license": "Apache-2.0",
+    "homepage": ""
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "pip",
+    "version": "24.0",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "pluggy",
+    "version": "1.7.0",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "pycparser",
+    "version": "3.12",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "pydantic",
+    "version": "2.14.2",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.50.2",
+    "license": "MIT",
+    "homepage": "https://github.com/pydantic/pydantic"
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "license": "BSD-2-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "pytest",
+    "version": "9.2.0",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "setuptools",
+    "version": "79.0.1",
+    "license": "See upstream licence files",
+    "homepage": ""
+  },
+  {
+    "name": "starlette",
+    "version": "1.10.0",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "license": "MIT",
+    "homepage": ""
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license": "PSF-2.0",
+    "homepage": ""
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.54.0",
+    "license": "BSD-3-Clause",
+    "homepage": ""
+  }
+]

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Review what your agent is about to do. Approve the exact action, in your language." />
+  <title>VaaniVerify — Review before action</title>
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="VaaniVerify home"><img src="/assets/mark.svg" width="32" height="32" alt="" />VaaniVerify</a>
+    <nav aria-label="Main navigation">
+      <button class="nav-link active" data-view="demo" aria-current="page">Demo</button>
+      <button class="nav-link" data-view="activity">Activity</button>
+      <button class="nav-link" data-view="about">How it works</button>
+    </nav>
+    <span class="sandbox-label">Local demo · no real transactions</span>
+  </header>
+  <main id="main">
+    <div id="session-error" class="notice error" role="alert" hidden></div>
+    <section id="view-demo" class="view">
+      <div class="page-intro">
+        <div><h1>Review before your agent acts.</h1><p class="intro-copy">Try a payment, a status check or document sharing.<br class="desktop-break" /> You set the limits and approve the final action.</p></div>
+        <div class="intro-meta"><span id="model-status" class="model-status">Checking local agent…</span><label for="language">Confirmation language</label><select id="language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="hinglish">Hinglish</option><option value="ta">தமிழ்</option></select></div>
+      </div>
+      <ol class="steps" aria-label="Demo progress"><li id="step-task" class="current" aria-current="step"><span>1</span>Set a task</li><li id="step-review"><span>2</span>Review the action</li><li id="step-result"><span>3</span>See the result</li></ol>
+      <div class="workspace-grid">
+        <section class="task-panel" aria-labelledby="task-heading">
+          <div class="panel-heading"><h2 id="task-heading">Your task</h2><span id="task-state" class="quiet">You set the limits</span></div>
+          <form id="task-form">
+            <fieldset id="task-fields">
+              <div class="example-row"><label for="example">Start with an example</label><select id="example"><option value="known-bill">Electricity bill</option><option value="subsidy-trap">Suspicious subsidy message</option><option value="payee-swap">Changed payment recipient</option><option value="licence">Document request</option><option value="monthly">Monthly payments</option><option value="cancel">Cancel a mandate</option><option value="custom">Custom task</option></select></div>
+              <label for="request">What do you need?</label><textarea id="request" rows="2" maxlength="1000" required>Pay my demo electricity bill, up to 500 rupees.</textarea>
+              <label for="operation">What may the agent do?</label><select id="operation"><option value="PAY">Make one payment</option><option value="READ_STATUS">Check status only</option><option value="SHARE">Share selected documents</option><option value="MANDATE">Set up recurring payments</option><option value="CANCEL_MANDATE">Cancel a mandate</option></select>
+              <div class="field-pair">
+                <div id="recipient-field"><label for="recipient">To this recipient</label><input id="recipient" value="utility.board@demo" spellcheck="false" autocomplete="off" pattern="[a-z][a-z0-9.\-]{1,30}@demo" required /><span class="field-hint">Use a synthetic @demo address</span></div>
+                <div id="amount-field"><label for="amount">Maximum allowed amount</label><div class="money-input"><span aria-hidden="true">₹</span><input id="amount" aria-label="Maximum amount in rupees" value="500" inputmode="decimal" pattern="[0-9]+(\.[0-9]{1,2})?" required /></div><span class="field-hint">A spending limit. State the payment amount in your task.</span></div>
+              </div>
+              <div id="mandate-fields" class="field-pair" hidden><div><label for="frequency">Payment schedule</label><select id="frequency"><option value="MONTHLY">Monthly</option><option value="WEEKLY">Weekly</option></select></div><div><label for="installments">Number of payments</label><input id="installments" type="number" min="1" max="12" step="1" value="3" /></div></div>
+              <div id="share-fields" hidden><fieldset class="document-choices"><legend>Only these documents</legend><label><input type="checkbox" name="document" value="driving_license" checked />Driving licence</label><label><input type="checkbox" name="document" value="degree_certificate" />Degree certificate</label><label><input type="checkbox" name="document" value="address_proof" />Address proof</label></fieldset><div class="field-pair"><div><label for="purpose">For this purpose</label><select id="purpose"><option value="employment">Employment</option><option value="education">Education</option><option value="identity_check">Identity verification</option></select></div><div><label for="retention">Retention in days</label><input id="retention" type="number" min="1" max="365" step="1" value="7" /></div></div></div>
+              <div id="cancel-field" hidden><label for="mandate-id">Mandate to cancel</label><input id="mandate-id" value="mandate-demo-1" pattern="mandate-demo-[0-9]{1,6}" /></div>
+              <details id="message-details" class="message-details"><summary>External message <span id="message-status">Example included</span></summary><div class="details-content"><label class="sr-only" for="external-message">External message for the agent</label><textarea id="external-message" rows="3" maxlength="4000" placeholder="Optional: paste a bill, email or SMS for the agent to read">DEMO electricity bill: utility.board@demo. Amount INR 500. Synthetic account only.</textarea><p class="field-hint">Sent alongside your task. This optional, untrusted text can influence the proposal but cannot widen your selected limits.</p></div></details>
+              <p id="example-message-cleared" class="field-hint message-note" role="status" hidden>Example message removed because you edited the task. Only your current task and limits will be sent unless you add an external message.</p>
+              <div class="form-footer"><button id="run-agent" class="button primary" type="submit" disabled>Run agent <span aria-hidden="true">→</span></button><span>Runs locally. Asks before acting.</span></div>
+            </fieldset>
+          </form>
+          <p id="task-error" class="notice error" role="alert" hidden></p>
+          <details id="model-help" class="setup-help" hidden><summary>Connect the local agent</summary><p>Keep the local model server running, then try again. In the project folder:</p><code>.venv\Scripts\python.exe scripts\local_model.py serve</code><p>The <a href="/lab">security lab</a> also has preset examples that work without a model.</p></details>
+          <button id="edit-task" class="text-button" type="button" hidden>Change task</button>
+        </section>
+        <section id="review-panel" class="review-panel" aria-labelledby="review-heading" aria-busy="false">
+          <div class="panel-heading"><h2 id="review-heading" tabindex="-1">Your permission</h2><span id="review-label" class="quiet">Preview</span></div>
+          <div id="permission-preview"></div>
+          <div id="running" class="running-state" role="status" hidden><div class="working-symbol" aria-hidden="true">···</div><h3>The agent is reading your task</h3><p>It will propose one action. Your permission stays the same.</p><span id="elapsed" class="quiet">This may take a moment on your device</span></div>
+          <div id="review-content" hidden>
+            <div id="decision" class="decision"></div>
+            <div id="action-summary" class="action-summary"></div>
+            <p id="confirmation" class="confirmation"></p>
+            <div id="permission-comparison" class="permission-comparison"></div>
+            <p id="request-comparison" class="request-comparison"></p>
+            <details id="inference-details" class="technical-details" hidden><summary>Inspect this model run</summary><p id="inference-meta"></p><h4>Task and external message sent to the model</h4><pre id="model-input"></pre><h4>Raw model response</h4><p class="field-hint">Untrusted model output. Any claim of completion is not a receipt; execution requires your approval and the gateway.</p><pre id="model-output"></pre></details>
+            <details class="technical-details"><summary>Why this decision?</summary><div id="policy-details"></div><h4>Untrusted model explanation</h4><p id="agent-explanation"></p><details><summary>Proposed action · JSON</summary><pre id="action-json"></pre></details></details>
+            <form id="approval-form" hidden>
+              <fieldset id="approval-fields">
+                <legend>Confirm the action</legend>
+                <fieldset class="direction-options"><legend>What will happen?</legend><div id="direction-choices"></div></fieldset>
+                <div id="confirm-recipient-field"><label id="confirm-recipient-label" for="confirm-recipient">Type the recipient to confirm</label><input id="confirm-recipient" autocomplete="off" spellcheck="false" required /></div>
+                <div id="confirm-amount-field"><label for="confirm-amount">Type the amount in rupees</label><input id="confirm-amount" inputmode="decimal" autocomplete="off" pattern="[0-9]+(\.[0-9]{1,2})?" required /></div>
+                <label class="consent-check"><input id="accept-terms" type="checkbox" required /><span>I have checked the action and its terms</span></label>
+                <p id="review-expiry" class="field-hint"></p>
+                <div class="approval-actions"><button id="approve" class="button primary" type="submit">Approve & execute</button><button id="reject" class="button secondary" type="button">Reject</button></div>
+              </fieldset>
+            </form>
+            <p id="review-error" class="notice error" role="alert" hidden></p>
+          </div>
+          <div id="result" hidden></div>
+          <button id="new-task" class="button secondary new-task" type="button" hidden>Try another task</button>
+          <div id="preview-footnote" class="preview-footnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8 12 3 3 5-6"/></svg><p>The agent can suggest.<br /><strong>Only you can approve.</strong></p></div>
+        </section>
+      </div>
+      <p class="demo-note">A local research prototype. Payments and documents are simulated; nothing real is sent.</p>
+    </section>
+    <section id="view-activity" class="view" hidden><div class="page-intro compact"><div><p class="overline">Your demo history</p><h1>Activity</h1><p class="intro-copy">Completed actions from the local gateway.</p></div><button id="refresh-activity" class="button secondary">Refresh</button></div><p id="audit-status" class="quiet"></p><div id="activity-list"></div></section>
+    <section id="view-about" class="view" hidden><div class="page-intro compact"><div><p class="overline">How VaaniVerify works</p><h1>A suggestion is not permission.</h1><p class="intro-copy">The agent proposes. You choose. A separate gateway checks.</p></div></div><div class="about-layout"><div class="about-steps"><article><span>01</span><div><h2>You set the permission</h2><p>Choose what the agent may do, who it may send to and the exact limits. These fields define the permission; the wording of a message cannot override them.</p></div></article><article><span>02</span><div><h2>Review the actual action</h2><p>A local model proposes an action. VaaniVerify compares it with your permission and describes the action using fixed templates in English, Hindi, Hinglish or Tamil.</p></div></article><article><span>03</span><div><h2>Approve exactly once</h2><p>Your approval signs the exact action. A separate gateway rejects changed payloads and reused approvals before recording a simulated result.</p></div></article></div><aside class="about-aside"><h3>A demo with clear limits</h3><p>No real UPI payments or document sharing. The model can be wrong. A confirmation is not proof that someone understood it.</p><p>This prototype does not protect a compromised device or a stolen owner session.</p><a class="button secondary" href="/lab">Explore the security lab <span aria-hidden="true">→</span></a><p class="field-hint">Attack simulations, evidence, technical details and agent integration</p></aside></div></section>
+  </main>
+  <footer class="site-footer"><span>VaaniVerify <span class="footer-divider">/</span> Every action, understood.</span><a href="/lab">Security lab <span aria-hidden="true">↗</span></a></footer>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

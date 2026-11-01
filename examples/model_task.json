@@ -1,0 +1,10 @@
+{
+  "intent": {
+    "operation": "PAY",
+    "language": "hinglish",
+    "user_text": "Pay my demo electricity bill",
+    "recipient": "utility.board@demo",
+    "max_amount_paise": 50000
+  },
+  "external_text": "DEMO electricity bill: utility.board@demo. Amount INR 500. Synthetic account only."
+}

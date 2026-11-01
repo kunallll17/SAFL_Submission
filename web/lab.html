@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="VaaniVerify: intent-bound, multilingual consent for untrusted AI agents. A local synthetic DPI security laboratory."
+    />
+    <title>VaaniVerify — Every action, understood.</title>
+    <link rel="icon" href="/assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/lab.css" />
+    <script src="/assets/lab.js" defer></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#lab" aria-label="VaaniVerify home"
+        ><img src="/assets/mark.svg" alt="" width="36" height="36" /><span
+          >vaani<span class="brand-light">verify</span
+          ><small>EVERY ACTION, UNDERSTOOD.</small></span
+        ></a
+      >
+      <div class="nav-label">WORKSPACE</div>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="lab">
+          <span class="nav-icon">◈</span> Security lab
+          <span class="nav-count">01</span>
+        </button>
+        <button class="nav-item" data-view="evidence">
+          <span class="nav-icon">▥</span> Evidence
+          <span class="nav-count">02</span>
+        </button>
+        <button class="nav-item" data-view="architecture">
+          <span class="nav-icon">⌘</span> Trust boundary
+          <span class="nav-count">03</span>
+        </button>
+        <button class="nav-item" data-view="receipts">
+          <span class="nav-icon">≡</span> Audit receipts
+          <span class="nav-count">04</span>
+        </button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="status-dot"></span> LOCAL SANDBOX
+        <p>
+          Real signatures.<br />Synthetic transactions.<br />Zero real money.
+        </p>
+        <span class="small-muted">UPI · AUTOPAY · DIGILOCKER</span>
+      </div>
+      <div class="sidebar-bottom">
+        <span class="version">VV / 0.1</span>
+        <p>Built for the India Agentic<br />AI Security Hackathon</p>
+        <span class="small-muted">31 OCTOBER 2026</span>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">
+          VaaniVerify <span>/</span>
+          <strong id="view-name">Security lab</strong>
+        </div>
+        <div class="topbar-right">
+          <a href="/demo">Back to demo</a>
+          <span class="local-badge"
+            ><span class="status-dot"></span> On your device</span
+          ><span class="avatar" title="Trusted owner console">VV</span>
+        </div>
+      </header>
+      <main>
+        <div id="session-alert" class="notice hidden" role="alert"></div>
+        <section id="view-lab" class="view">
+          <div class="hero">
+            <div>
+              <p class="eyebrow">
+                <span></span> A CONSENT LAYER FOR AGENTIC INDIA
+              </p>
+              <h1>Trust the action.<br /><span>Verify the intent.</span></h1>
+              <p class="hero-copy">
+                An agent can say “money received” while sending it away.<br />See
+                the action, in your language, before it can execute.
+              </p>
+            </div>
+            <div class="hero-seal" aria-hidden="true">
+              <div class="seal-ring">
+                <span>वाणी</span><small>VOICE → INTENT → PROOF</small>
+              </div>
+              <div class="seal-caption">
+                A clear boundary.<br />A meaningful choice.
+              </div>
+            </div>
+          </div>
+
+          <div class="stat-strip">
+            <div>
+              <span class="stat-value">04</span
+              ><span>confirmation languages</span>
+            </div>
+            <div>
+              <span class="stat-value">80</span
+              ><span>authored synthetic cases</span>
+            </div>
+            <div>
+              <span class="stat-value mono">Ed25519</span
+              ><span>exact-action signatures</span>
+            </div>
+            <div>
+              <span class="stat-value">0</span
+              ><span>LLMs in the trust boundary</span>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / INTERACTIVE LAB</p>
+              <h2>Put an agent’s intent to the test.</h2>
+            </div>
+            <fieldset class="language-switch">
+              <legend class="sr-only">Confirmation language</legend>
+              <button data-language="en">English</button
+              ><button data-language="hi">हिन्दी</button
+              ><button data-language="hinglish" class="active">Hinglish</button
+              ><button data-language="ta">தமிழ்</button>
+            </fieldset>
+          </div>
+          <div class="scenario-bar">
+            <label for="scenario">SCENARIO</label
+            ><select
+              id="scenario"
+              aria-label="Choose a synthetic scenario"
+            ></select
+            ><span id="case-tag" class="tag danger">ATTACK SIMULATION</span
+            ><button id="load-scenario" class="button primary">
+              Inspect action <span>↗</span>
+            </button>
+          </div>
+          <div class="quick-cases" aria-label="Featured scenarios">
+            <button data-case="subsidy-trap" class="active">
+              ↗ Subsidy trap</button
+            ><button data-case="external-bill">✓ Legitimate bill</button
+            ><button data-case="recurring-trap">↻ Silent Autopay</button
+            ><button data-case="scope-widen">▤ Document scope</button
+            ><button data-case="after-consent">⇄ After-approval swap</button>
+          </div>
+
+          <details class="task-composer">
+            <summary>
+              Create a trusted task for your own agent <span>＋</span>
+            </summary>
+            <div class="composer-content">
+              <p class="microcopy">
+                Select the permission yourself. Your agent receives only the
+                task ID and a proposal credential; it cannot create this
+                authority.
+              </p>
+              <div class="composer-grid">
+                <div>
+                  <label for="task-text">Your request</label
+                  ><input
+                    id="task-text"
+                    value="Pay my demo electricity bill"
+                  /><label for="task-operation">What may the agent do?</label
+                  ><select id="task-operation">
+                    <option value="PAY">Pay once</option>
+                    <option value="READ_STATUS">Read status only</option>
+                    <option value="MANDATE">Set up recurring payments</option>
+                    <option value="SHARE">Share selected documents</option>
+                    <option value="CANCEL_MANDATE">Cancel a mandate</option>
+                  </select>
+                  <div id="task-recipient-group">
+                    <label for="task-recipient"
+                      >Recipient (synthetic @demo handle)</label
+                    ><input
+                      id="task-recipient"
+                      value="utility.board@demo"
+                      spellcheck="false"
+                    /><label class="checkbox-label"
+                      ><input id="task-external" type="checkbox" /><span
+                        >Let the agent suggest a recipient, subject to my exact
+                        approval.</span
+                      ></label
+                    >
+                  </div>
+                  <div id="task-amount-group">
+                    <label for="task-amount"
+                      >Maximum amount per payment (rupees)</label
+                    ><input id="task-amount" value="500" inputmode="decimal" />
+                  </div>
+                </div>
+                <div>
+                  <div id="task-mandate-group" class="hidden">
+                    <label for="task-frequency">Payment schedule</label
+                    ><select id="task-frequency">
+                      <option value="MONTHLY">Monthly</option>
+                      <option value="WEEKLY">Weekly</option></select
+                    ><label for="task-installments"
+                      >Maximum number of payments (1–12)</label
+                    ><input
+                      id="task-installments"
+                      type="number"
+                      min="1"
+                      max="12"
+                      value="3"
+                    />
+                  </div>
+                  <div id="task-share-group" class="hidden">
+                    <fieldset class="document-options">
+                      <legend>Documents the agent may share</legend>
+                      <label class="checkbox-label"
+                        ><input
+                          type="checkbox"
+                          name="task-document"
+                          value="driving_license"
+                          checked
+                        />Driving licence</label
+                      ><label class="checkbox-label"
+                        ><input
+                          type="checkbox"
+                          name="task-document"
+                          value="degree_certificate"
+                        />Degree certificate</label
+                      ><label class="checkbox-label"
+                        ><input
+                          type="checkbox"
+                          name="task-document"
+                          value="address_proof"
+                        />Address proof</label
+                      >
+                    </fieldset>
+                    <label for="task-purpose">Purpose</label
+                    ><select id="task-purpose">
+                      <option value="employment">Employment</option>
+                      <option value="education">Education</option>
+                      <option value="identity_check">
+                        Identity verification
+                      </option></select
+                    ><label for="task-retention"
+                      >Requested retention (days, 1–365)</label
+                    ><input
+                      id="task-retention"
+                      type="number"
+                      min="1"
+                      max="365"
+                      value="7"
+                    />
+                  </div>
+                  <div id="task-cancel-group" class="hidden">
+                    <label for="task-mandate-id">Existing demo mandate ID</label
+                    ><input id="task-mandate-id" value="mandate-demo-1" />
+                  </div>
+                  <div class="composer-tip">
+                    <strong>One intent. One action.</strong>
+                    <p>
+                      Your task expires in 15 minutes. A proposed action has a
+                      three-minute review window. Approval still requires the
+                      exact action and direction.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <label for="task-external-text"
+                >External message for the agent (untrusted)</label
+              >
+              <textarea id="task-external-text" rows="3" maxlength="4000">
+DEMO electricity bill: utility.board@demo. Amount INR 500. Synthetic account only.</textarea
+              >
+              <button id="create-task" class="button primary">
+                Create trusted task ↗
+              </button>
+              <div id="created-task" class="hidden"></div>
+              <div class="inbox-heading">
+                <h4>Agent proposal inbox</h4>
+                <button id="refresh-inbox" class="button secondary">
+                  Refresh inbox ↻
+                </button>
+              </div>
+              <div id="proposal-inbox" class="microcopy">
+                Create a task, send its ID to your agent, then refresh to review
+                its proposal.
+              </div>
+            </div>
+          </details>
+
+          <div class="lab-grid">
+            <div class="context-column">
+              <article class="panel intent-panel">
+                <div class="panel-top">
+                  <span class="panel-label"
+                    ><span class="dot green"></span> ORIGINAL USER INTENT</span
+                  ><span class="tag neutral">TRUSTED INPUT</span>
+                </div>
+                <p id="user-text" class="user-quote"></p>
+                <div class="intent-summary" id="intent-summary"></div>
+                <p class="microcopy">
+                  Authority comes from the user’s structured selection below.
+                  Text is context, never permission.
+                </p>
+                <details id="custom-editor">
+                  <summary>
+                    Edit intent & proposed action <span>↗</span>
+                  </summary>
+                  <div class="editor-area">
+                    <label for="intent-json"
+                      >User-selected intent (trusted console)</label
+                    ><textarea
+                      id="intent-json"
+                      spellcheck="false"
+                      rows="9"
+                    ></textarea
+                    ><label for="action-json"
+                      >Agent-proposed action (untrusted)</label
+                    ><textarea
+                      id="action-json"
+                      spellcheck="false"
+                      rows="8"
+                    ></textarea
+                    ><label for="agent-text"
+                      >Agent explanation (untrusted)</label
+                    ><textarea id="agent-text" rows="3"></textarea
+                    ><button id="inspect-custom" class="button secondary">
+                      Inspect custom proposal
+                    </button>
+                    <p class="microcopy">
+                      Only synthetic handles ending in @demo are accepted.
+                      Amounts are integer paise.
+                    </p>
+                  </div>
+                </details>
+              </article>
+              <article class="panel source-panel">
+                <div class="panel-top">
+                  <span class="panel-label"
+                    ><span class="dot coral"></span> AGENT & EXTERNAL
+                    CONTENT</span
+                  ><span class="tag danger">UNTRUSTED</span>
+                </div>
+                <div class="source-label">EXTERNAL MESSAGE</div>
+                <p id="external-text" class="external-copy"></p>
+                <div class="agent-bubble">
+                  <span class="source-label">THE AGENT SAYS</span>
+                  <p id="agent-message"></p>
+                </div>
+                <div class="code-header">
+                  <span>WHAT THE TOOL ACTUALLY REQUESTS</span
+                  ><span class="mono">JSON</span>
+                </div>
+                <pre id="payload" class="payload"></pre>
+                <div class="baseline-note">
+                  <span class="baseline-icon">!</span>
+                  <p>
+                    <strong>Without an execution guard</strong><br /><span
+                      id="baseline-text"
+                      >A generic approval could execute this proposed
+                      action.</span
+                    ><small
+                      >Illustrative unguarded policy; no model or user
+                      study.</small
+                    >
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="verification-column">
+              <article class="panel verification-panel">
+                <div class="panel-top">
+                  <span class="panel-label"
+                    ><img
+                      src="/assets/mark.svg"
+                      width="20"
+                      height="20"
+                      alt=""
+                    />
+                    VAANIVERIFY KERNEL</span
+                  ><span class="tag success">TRUSTED BOUNDARY</span>
+                </div>
+                <div id="decision-empty" class="empty-decision">
+                  <div class="empty-icon">⌁</div>
+                  <h3>Words are not authority.</h3>
+                  <p>
+                    Inspect a scenario to compare the proposed action with the
+                    user’s original permission.
+                  </p>
+                  <div class="boundary-flow">
+                    <span>Intent</span><i>→</i><span>Policy</span><i>→</i
+                    ><span>Proof</span>
+                  </div>
+                </div>
+                <div id="decision-result" class="hidden" aria-live="polite">
+                  <div id="decision-banner" class="decision-banner">
+                    <span id="decision-symbol">×</span>
+                    <div>
+                      <p id="decision-kicker"></p>
+                      <h3 id="decision-title"></h3>
+                      <p id="decision-description"></p>
+                    </div>
+                  </div>
+                  <div id="policy-checks" class="policy-checks"></div>
+                  <div id="warnings" class="hidden"></div>
+                  <div class="confirmation">
+                    <div class="confirmation-top">
+                      <span class="source-label"
+                        >COMPILED FROM THE EXACT PAYLOAD</span
+                      ><button
+                        id="speak"
+                        class="icon-button"
+                        title="Read using an installed local voice"
+                        aria-label="Read confirmation aloud"
+                      >
+                        ◖))
+                      </button>
+                    </div>
+                    <div id="direction-visual" class="direction-visual"></div>
+                    <p id="confirmation-text" class="confirmation-text"></p>
+                    <div
+                      id="confirmation-details"
+                      class="confirmation-details"
+                    ></div>
+                    <span class="template-note"
+                      >Fixed language template · no generated explanation</span
+                    >
+                  </div>
+                  <div id="approval-form" class="approval-form hidden">
+                    <h4>What will this action do?</h4>
+                    <p class="microcopy">
+                      Choose the direction you intend. A mismatch cancels this
+                      intent.
+                    </p>
+                    <div id="direction-choices" class="direction-choices"></div>
+                    <label for="recipient-answer" id="recipient-label"
+                      >Type the full recipient shown above</label
+                    ><input
+                      id="recipient-answer"
+                      autocomplete="off"
+                      spellcheck="false"
+                    />
+                    <div id="amount-answer-wrap">
+                      <label for="amount-answer"
+                        >Type the amount in rupees</label
+                      ><input
+                        id="amount-answer"
+                        inputmode="decimal"
+                        autocomplete="off"
+                        placeholder="e.g. 500.00"
+                      />
+                    </div>
+                    <label class="checkbox-label"
+                      ><input id="terms-accepted" type="checkbox" /><span
+                        >I reviewed the exact action and all terms shown
+                        above.</span
+                      ></label
+                    >
+                    <div class="approval-buttons">
+                      <button id="approve" class="button primary">
+                        Sign & execute in sandbox <span>↗</span></button
+                      ><button id="cancel" class="button quiet">Cancel</button>
+                    </div>
+                    <p class="microcopy">
+                      One action · expires after 60 seconds · no real
+                      transaction
+                    </p>
+                  </div>
+                  <div id="execution-result" class="hidden"></div>
+                </div>
+              </article>
+              <div class="boundary-caption">
+                <span>⌘</span>
+                <p>
+                  <strong>The agent proposes. You authorize.</strong><br />The
+                  execution gateway holds only the public key. It cannot
+                  manufacture your approval.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="scope-note">
+            <span>RESEARCH BOUNDARY</span>
+            <p>
+              This lab uses synthetic actions and modeled attacks. It does not
+              connect to UPI or DigiLocker. Language comprehension and
+              real-world fraud prevention have not been measured.
+            </p>
+          </div>
+        </section>
+
+        <section id="view-evidence" class="view hidden">
+          <div class="page-intro">
+            <p class="eyebrow">02 / REPRODUCIBLE EVIDENCE</p>
+            <h1>Claims you can inspect.</h1>
+            <p>
+              Measured policy outcomes, with the method and its limits beside
+              them.
+            </p>
+          </div>
+          <div id="evidence-content"></div>
+        </section>
+
+        <section id="view-architecture" class="view hidden">
+          <div class="page-intro">
+            <p class="eyebrow">03 / THE TRUST BOUNDARY</p>
+            <h1>Assume the agent is compromised.</h1>
+            <p>Keep authority somewhere it cannot rewrite.</p>
+          </div>
+          <div class="architecture-flow">
+            <article>
+              <span class="step-num">01</span>
+              <h3>User intent</h3>
+              <p>
+                Operation, recipient, ceiling, recurring terms and document
+                scope are selected in the owner console.
+              </p>
+              <span class="tag success">OWNER SESSION</span>
+            </article>
+            <div class="flow-arrow">→</div>
+            <article class="untrusted-node">
+              <span class="step-num">02</span>
+              <h3>Agent proposal</h3>
+              <p>
+                Messages, explanations and tool arguments may be
+                attacker-controlled. Source labels grant no authority.
+              </p>
+              <span class="tag danger">UNTRUSTED</span>
+            </article>
+            <div class="flow-arrow">→</div>
+            <article>
+              <span class="step-num">03</span>
+              <h3>Consent kernel</h3>
+              <p>
+                Deterministic policy + payload-to-language compilation + exact
+                confirmation. Then Ed25519 signing.
+              </p>
+              <span class="tag success">SIGNING AUTHORITY</span>
+            </article>
+            <div class="flow-arrow">→</div>
+            <article>
+              <span class="step-num">04</span>
+              <h3>Mock gateway</h3>
+              <p>
+                Independent process verifies action, signature, lifetime and
+                one-use budget. SQLite commits the receipt atomically.
+              </p>
+              <span class="tag neutral">PUBLIC KEY ONLY</span>
+            </article>
+          </div>
+          <div class="architecture-grid">
+            <article class="panel prose">
+              <p class="eyebrow">WHAT THE ATTACKER MAY KNOW</p>
+              <h2>All of the rules.</h2>
+              <p>
+                Prompts, templates, policy code, schemas and the public key can
+                be public. The attacker may craft any valid tool proposal,
+                invent an explanation, and alter or replay an execution request.
+              </p>
+              <p>
+                Authorization rests on separate owner credentials and a private
+                signing key, not secret prompts. Field provenance is derived
+                from stored user constraints; an agent cannot label its own
+                output “trusted.”
+              </p>
+            </article>
+            <article class="panel prose">
+              <p class="eyebrow">WHAT WE DO NOT CLAIM</p>
+              <h2>A proof of understanding.</h2>
+              <p>
+                A direction choice detects a mismatching answer. It does not
+                prove someone understood the transaction or prevent a person
+                from being coached into the correct answer.
+              </p>
+              <p>
+                A compromised browser, stolen owner session, compromised signing
+                service or malicious local process is outside this prototype’s
+                boundary. Production requires isolated origins, stronger
+                identity, secure key storage and user studies.
+              </p>
+            </article>
+            <article class="panel prose">
+              <p class="eyebrow">DATA SHARING</p>
+              <h2>Consent ends at execution.</h2>
+              <p>
+                Document scope, purpose and retention are bound to the approved
+                request. This synthetic gateway cannot force a recipient to
+                delete copied data or honor a stated purpose.
+              </p>
+            </article>
+            <article class="panel prose">
+              <p class="eyebrow">OPEN BY DESIGN</p>
+              <h2>Inspect the implementation.</h2>
+              <p>
+                The local source, scenario corpus, benchmark JSON/CSV and
+                regression tests are included. The capability expires in 60
+                seconds. A stored intent can authorize one action only.
+              </p>
+              <div class="code-line">
+                python -m pytest -q<br />python -m vaaniverify.evaluate
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-receipts" class="view hidden">
+          <div class="page-intro">
+            <p class="eyebrow">04 / EXECUTION RECEIPTS</p>
+            <h1>Leave a verifiable trail.</h1>
+            <p>Only actions accepted by the mock gateway appear here.</p>
+          </div>
+          <div class="receipts-toolbar">
+            <div id="audit-state"></div>
+            <button id="refresh-receipts" class="button secondary">
+              Refresh receipts ↻</button
+            ><button id="export-receipts" class="button quiet">
+              Export JSON ↓
+            </button>
+          </div>
+          <div id="receipt-list"></div>
+          <div class="scope-note">
+            <span>LOCAL AUDIT LIMIT</span>
+            <p>
+              The hash chain detects inconsistent edits. It is not independently
+              anchored: someone who can rewrite the whole database can recompute
+              the chain.
+            </p>
+          </div>
+        </section>
+        <footer>
+          <span>VaaniVerify</span>
+          <p>Intent is human. Enforcement should be deterministic.</p>
+          <span>LOCAL RESEARCH PROTOTYPE</span>
+        </footer>
+      </main>
+    </div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  </body>
+</html>

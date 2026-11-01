@@ -1,0 +1,39 @@
+{
+  "checked_at_utc": "2026-11-01T12:35:21.612771+00:00",
+  "pytest": {
+    "passed": 129,
+    "failed": 1,
+    "failed_test": "test_real_model_copies_a_delegated_recipient_from_the_bill",
+    "browser_tests_enabled": true,
+    "live_model_tests_enabled": true
+  },
+  "policy_fixtures": {
+    "modeled_attacks_executed": 0,
+    "attack_cases": 40,
+    "legitimate_executions": 40,
+    "legitimate_cases": 40
+  },
+  "capability_mutations": {
+    "blocked": 1000,
+    "trials": 1000,
+    "valid_originals_executed": 1000
+  },
+  "services": {
+    "console_8765": 200,
+    "gateway_8766": 200,
+    "model_8770": 200
+  },
+  "report": {
+    "pages": 9,
+    "all_pages_rendered": true,
+    "visual_review": "Overview of all pages plus detailed review of updated pages 6 and 9; no clipping observed."
+  },
+  "draft_word_limits": "All nine marked sections pass.",
+  "readiness": "Prototype with a disclosed live-model failure; not an all-tests-pass release.",
+  "team_items": [
+    "Private contact details and backgrounds still use placeholders in the draft.",
+    "Public repository/report URLs and team permission choices remain to be supplied or verified.",
+    "Official event page lists 31 October 2026 11:59 PM; form availability or extension not verified."
+  ],
+  "publication": "No upload or submission performed."
+}
