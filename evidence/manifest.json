@@ -32,8 +32,8 @@
     },
     {
       "path": "docs/SUBMISSION_DRAFT.md",
-      "bytes": 18977,
-      "sha256": "aa126a7be93d46419870c413f4830e897e7b7e75d92c3827a6b753588893bddc"
+      "bytes": 19071,
+      "sha256": "0c74f0ac010ca16d25058145d7b12fec1c28974ba06ade3599a34bc3fc320518"
     },
     {
       "path": "docs/THREAT_MODEL.md",
@@ -142,8 +142,8 @@
     },
     {
       "path": "evidence/submission_publication.json",
-      "bytes": 991,
-      "sha256": "aa287df9d094a78307b6d5545a7e29f012f4fb63ce6e35b78e36ef42b254ab2b"
+      "bytes": 2066,
+      "sha256": "bb9d5b972f4a163918eadd0df7b5a8d8b353e00c9776b6fae52f126af890a1d8"
     },
     {
       "path": "evidence/submission_pytest.xml",

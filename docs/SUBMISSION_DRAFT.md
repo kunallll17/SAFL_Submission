@@ -144,7 +144,7 @@ The lesson was that consent security is an end-to-end contract across intent, pr
 | Work during the hackathon | Yes: the core implementation was developed during the hackathon. |
 | AI tools used | OpenAI Codex (GPT-6) for implementation, testing and documentation. Optional runtime proposer: Qwen2.5-1.5B-Instruct Q4_K_M via llama.cpp b12020; no model in the trusted authorization path |
 | External code/models/data | See `THIRD_PARTY_NOTICES.md`, `evidence/dependencies.json` and `evidence/local_model_runtime.json`. No third-party dataset; optional Apache-2.0 Qwen weights and MIT llama.cpp runtime, with pinned revision/checksums |
-| All links public without login | NOT YET - publication and signed-out link verification remain |
+| All links public without login | Yes - repository, report, demo video and submission ZIP returned HTTP 200 without authentication; downloaded artifacts matched the local files. |
 
 ## 9. Responsible testing
 
@@ -166,5 +166,5 @@ Kunal Sharma, the sole team member, confirmed both permissions below.
 1. Enter the registered email and phone from the private form copy. The public repository and ZIP intentionally omit these contact details.
 2. Team size is one; background, responsible-testing declarations and both organizer permissions have been confirmed by Kunal Sharma.
 3. Review the linked report, demo video and repository. Private contact details belong only in the contest form; runtime credentials and model binaries are excluded from the public package.
-4. Open repository, report and artifact links while signed out; set the public-links declaration only after checking.
+4. Public repository, report, video and ZIP links have been verified without authentication. Use these links in the contest form.
 5. Submit one form for the team. The template lists **31 October 2026, 11:59 pm**; confirm an extension or continued acceptance before relying on late submission. The contest form has not been submitted.

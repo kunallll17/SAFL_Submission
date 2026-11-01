@@ -21,9 +21,37 @@
     "seconds": 25,
     "credits": "docs/VIDEO_CREDITS.md"
   },
-  "public_url_checks": [],
-  "publication": "Prepared; upload pending",
+  "public_url_checks": [
+    {
+      "url": "https://github.com/kunallll17/SAFL_Submission",
+      "status": 200,
+      "no_authentication_used": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kunallll17/SAFL_Submission/main/README.md",
+      "status": 200,
+      "no_authentication_used": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kunallll17/SAFL_Submission/main/output/pdf/TeamBifrost_Report.pdf",
+      "status": 200,
+      "no_authentication_used": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kunallll17/SAFL_Submission/main/brag.mp4",
+      "status": 200,
+      "no_authentication_used": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/kunallll17/SAFL_Submission/main/output/source/TeamBifrost_Submission.zip",
+      "status": 200,
+      "no_authentication_used": true
+    }
+  ],
+  "publication": "Published to the public main branch; submission links verified without authentication.",
   "application_tests": "Not rerun for documentation, packaging and video-credit changes. Latest full-run evidence remains 129 passed and 1 failed in submission_pytest.xml.",
   "contest_form_submitted": false,
-  "deadline_extension_verified": false
+  "deadline_extension_verified": false,
+  "public_links_checked_at_utc": "2026-11-01T13:15:13.967849+00:00",
+  "verification_basis_commit": "55915e51de0a3a9aff6d567bae7feda147a66aa5"
 }
